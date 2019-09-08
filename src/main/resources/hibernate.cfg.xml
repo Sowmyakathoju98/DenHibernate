@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- DB Configuration -->
+
+		<property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521/XE</property>
+		<property name="hibernate.connection.username">system</property>
+		<property name="hibernate.connection.password">manager</property>
+		<!-- <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property> 
+			<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Den</property> 
+			<property name="hibernate.connection.username">root</property> <property 
+			name="hibernate.connection.password">system</property> -->
+		<!-- JDBC ConnectionPool -->
+		<property name="hibernate.connection.pool_size">10</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.show_sql">true</property>
+		<!-- hibernate properties -->
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<!-- <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+		 --><property name="hbm2ddl.auto">update</property>
+
+
+		<mapping class="com.virtusa.denorm.entity.CategoryDetail" />
+		<mapping class="com.virtusa.denorm.entity.CustomerDetail" />
+		<mapping class="com.virtusa.denorm.entity.ProductDetail" />
+		<mapping class="com.virtusa.denorm.entity.ShoppingCart" />
+		<mapping class="com.virtusa.denorm.entity.CardDetail" />
+	</session-factory>
+</hibernate-configuration>
